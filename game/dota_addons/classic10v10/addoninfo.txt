@@ -1,0 +1,14 @@
+"AddonInfo"
+{
+    "addontitle" "Classic 10v10"
+    "addonauthor" "DeliciousPants"
+    "TeamCount" "2"
+
+    "IsPlayable" "1"
+    
+    "maps" "dota"
+    "dota"
+    {
+        "MaxPlayers" "20"
+    }
+}

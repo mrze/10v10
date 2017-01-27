@@ -1,0 +1,47 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	//=================================================================================================================
+	// Ability: Bloodseeker's Thirst 10v10 reduced effects (based on 7.01)
+	//=================================================================================================================
+	"bloodseeker_thirst"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"min_bonus_pct"				"75"
+			}			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_movement_speed"		"8 12 16 20"
+			}			
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"8 12 16 20"
+			}		
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_bonus_pct"				"20"
+			}	
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"visibility_threshold_pct"	"20"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"invis_threshold_pct"	"20"
+			}
+		}
+	}
+}
