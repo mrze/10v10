@@ -38,6 +38,7 @@
     </script>
     
     <Panel>
+        <CustomUIElement type="GameSetup" layoutfile="file://{resources}/layout/custom_game/team_select.xml" />
         <CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/multiteam_top_scoreboard.xml" />
     </Panel>
 </root>

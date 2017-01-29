@@ -43,7 +43,7 @@ function Activate()
 	GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode, "FilterModifyGold"), self)
 	GameRules:GetGameModeEntity():SetModifyExperienceFilter(Dynamic_Wrap(GameMode, "FilterModifyExperience"), self)
     
-	GameRules:SetCustomGameSetupAutoLaunchDelay(5)
+	GameRules:SetCustomGameSetupAutoLaunchDelay(10)
 	GameRules:LockCustomGameSetupTeamAssignment(true)
 	GameRules:EnableCustomGameSetupAutoLaunch(true)
     
@@ -162,6 +162,7 @@ function GameMode:OnGameRulesStateChange(keys)
     local newState = GameRules:State_Get()
 
     if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+        CustomGameEventManager:Send_ServerToAllClients("show_hero_selection", {})
         GameMode:HeroSelection()
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
