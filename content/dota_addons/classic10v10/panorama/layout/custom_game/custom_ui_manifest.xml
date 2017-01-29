@@ -35,6 +35,21 @@
         GameUI.CustomUIConfig().player_colors[17] = "#F88000;";
         GameUI.CustomUIConfig().player_colors[18] = "#E0B818;";
         GameUI.CustomUIConfig().player_colors[19] = "#A0FF60;";
+
+        // Workaround for https://github.com/ModDota/BugTracker/issues/67#issuecomment-275948310
+        function ShowHeroSelection() {
+            $.GetContextPanel().GetParent().GetParent().FindChild("PreGame").visible = true;
+        }
+        function HideHeroSelection() {
+            $.GetContextPanel().GetParent().GetParent().FindChild("PreGame").visible = false;
+        }
+
+        (function()
+        {
+            HideHeroSelection();
+            GameEvents.Subscribe("show_hero_selection", ShowHeroSelection);
+            GameEvents.Subscribe("hide_hero_selection", HideHeroSelection);
+        })();
     </script>
     
     <Panel>

@@ -49,7 +49,7 @@ function Activate()
     
     GameRules:SetHeroSelectionTime(HERO_SELECTION_TIME)
     GameRules:SetStrategyTime(0.0)
-	GameRules:SetShowcaseTime(0.0)
+	GameRules:SetShowcaseTime(10.0)
 	GameRules:SetPreGameTime(60.0)
 	GameRules:SetPostGameTime(45.0)
 	
@@ -164,6 +164,12 @@ function GameMode:OnGameRulesStateChange(keys)
     if newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
         CustomGameEventManager:Send_ServerToAllClients("show_hero_selection", {})
         GameMode:HeroSelection()
+
+    elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+        CustomGameEventManager:Send_ServerToAllClients("hide_hero_selection", {})
+
+    elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
+        CustomGameEventManager:Send_ServerToAllClients("hide_hero_selection", {})
 
     elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
         GameMode:OnGameInProgress()

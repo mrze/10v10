@@ -290,20 +290,12 @@ function UpdateTimer()
 	$.Schedule( 0.1, UpdateTimer );
 }
 
-// Workaround for https://github.com/ModDota/BugTracker/issues/67#issuecomment-275948310
-function ShowHeroSelection() {
-    $.GetContextPanel().GetParent().GetParent().GetParent().GetParent().FindChild("PreGame").visible = true;
-}
-
 
 //--------------------------------------------------------------------------------------------------
 // Entry point called when the team select panel is created
 //--------------------------------------------------------------------------------------------------
 (function()
 {
-    $.GetContextPanel().GetParent().GetParent().GetParent().GetParent().FindChild("PreGame").visible = false;
-    GameEvents.Subscribe( "show_hero_selection", ShowHeroSelection );
-    
 	var bShowSpectatorTeam = false;
 	var bAutoAssignTeams = true;
 
